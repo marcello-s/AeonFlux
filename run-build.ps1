@@ -1,0 +1,1 @@
+$scriptPath = Split-Path $MyInvocation.InvocationNameImport-Module (join-path $scriptPath psake.psm1) -forceInvoke-psake -buildFile default.ps1 -framework '4.0'
