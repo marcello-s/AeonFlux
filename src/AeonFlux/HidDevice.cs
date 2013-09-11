@@ -59,7 +59,7 @@ namespace AeonFlux
             else
             {
                 _handle.SetHandleAsInvalid();
-                throw HidDeviceException.CreateWithWin32Error("Failed to initialize device file handle.");
+                throw HidDeviceException.CreateWithWin32Error("Failed to initialize device file handle: " + devicePath);
             }
         }
     }

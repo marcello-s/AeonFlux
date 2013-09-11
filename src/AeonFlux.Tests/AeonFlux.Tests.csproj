@@ -8,7 +8,7 @@
     <ProjectGuid>{46196844-9C32-40AC-BF6A-B5EBFCDF79F1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AeonFlux.Tests</RootNamespace>
+    <RootNamespace>AeonFlux</RootNamespace>
     <AssemblyName>AeonFlux.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -45,7 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="MakeyMakeyDeviceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
