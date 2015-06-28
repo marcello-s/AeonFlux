@@ -1,3 +1,4 @@
 # Aeon Flux #
 
-A .NET Communication Library for MakeyMakey.com
+Re-purposing this github project ..
+
