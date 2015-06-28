@@ -8,7 +8,7 @@
     TaskName="Xunit.Runner.MSBuild.xunit"/>
 
   <Target Name="Test">
-    <xunit Assembly="bin\AeonFlux.Tests.dll" />
+    <xunit Assembly="bin\csharp\AeonFlux.Tests.dll" />
   </Target>
   
 </Project> 
