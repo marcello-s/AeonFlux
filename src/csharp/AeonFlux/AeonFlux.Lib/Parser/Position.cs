@@ -5,7 +5,7 @@ for details see License.txt
  */
 #endregion
 
-namespace AeonFlux.Lib.Parser
+namespace AeonFlux.Parser
 {
     internal struct Position
     {

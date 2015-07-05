@@ -7,7 +7,7 @@
     <ProjectGuid>{8468151B-0F0A-4D22-8402-05E3A9A477D1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AeonFlux.Lib</RootNamespace>
+    <RootNamespace>AeonFlux</RootNamespace>
     <AssemblyName>AeonFlux.Lib</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -39,7 +39,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Parser\ITokenReader.cs" />
+    <Compile Include="Parser\Lexer.cs" />
     <Compile Include="Parser\Position.cs" />
+    <Compile Include="Parser\Punctuation.cs" />
     <Compile Include="Parser\Token.cs" />
     <Compile Include="Parser\TokenValue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
