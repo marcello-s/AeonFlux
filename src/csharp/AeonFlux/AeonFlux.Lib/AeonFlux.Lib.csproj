@@ -39,6 +39,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ast\AccessorExpression.cs" />
+    <Compile Include="Ast\ArrayLiteralExpression.cs" />
+    <Compile Include="Ast\AssignExpression.cs" />
+    <Compile Include="Ast\BinaryOperatorExpression.cs" />
+    <Compile Include="Ast\BreakExpression.cs" />
+    <Compile Include="Ast\CallExpression.cs" />
+    <Compile Include="Ast\CaseExpression.cs" />
+    <Compile Include="Ast\ConditionalExpression.cs" />
+    <Compile Include="Ast\ConditionalLoopExpression.cs" />
+    <Compile Include="Ast\ConstantExpression.cs" />
+    <Compile Include="Ast\ContinueExpression.cs" />
+    <Compile Include="Ast\DefinitionExpression.cs" />
+    <Compile Include="Ast\ForExpression.cs" />
+    <Compile Include="Ast\ForInExpression.cs" />
+    <Compile Include="Ast\IdentifierExpression.cs" />
+    <Compile Include="Ast\IdentifierPartExpression.cs" />
+    <Compile Include="Ast\IExpression.cs" />
+    <Compile Include="Ast\IExpressionVisitor.cs" />
+    <Compile Include="Ast\IfExpression.cs" />
+    <Compile Include="Ast\IllegalExpression.cs" />
+    <Compile Include="Ast\MethodExpression.cs" />
+    <Compile Include="Ast\NewExpression.cs" />
+    <Compile Include="Ast\ObjectLiteralExpression.cs" />
+    <Compile Include="Ast\PostfixExpression.cs" />
+    <Compile Include="Ast\PrefixExpression.cs" />
+    <Compile Include="Ast\ReturnExpression.cs" />
+    <Compile Include="Ast\SequenceExpression.cs" />
+    <Compile Include="Ast\SwitchExpression.cs" />
+    <Compile Include="Ast\ThrowExpression.cs" />
+    <Compile Include="Ast\TryCatchFinallyExpression.cs" />
+    <Compile Include="Ast\VarExpression.cs" />
     <Compile Include="Parser\ITokenReader.cs" />
     <Compile Include="Parser\Lexer.cs" />
     <Compile Include="Parser\Position.cs" />
