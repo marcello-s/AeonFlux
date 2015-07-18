@@ -1,97 +1,100 @@
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Containers.Hashed_Maps; use Ada.Containers;
-with Token; use Token;
+with Tokens; use Tokens;
 
 package body Punctuation is
 
-   procedure Initialize (O : Object) is
-      C : Object := O;
+   procedure Initialize (O : in out Object) is
    begin
       -- Punctuators
-      C.Punctuators.Insert(To_Unbounded_String ("("), Token.LeftBracket);
-      C.Punctuators.Insert(To_Unbounded_String (")"), Token.RightBracket);
-      C.Punctuators.Insert(To_Unbounded_String ("{"), Token.LeftBrace);
-      C.Punctuators.Insert(To_Unbounded_String ("}"), Token.RightBrace);
-      C.Punctuators.Insert(To_Unbounded_String ("["), Token.LeftSquareBracket);
-      C.Punctuators.Insert(To_Unbounded_String ("]"), Token.RightSquareBracket);
-      C.Punctuators.Insert(To_Unbounded_String (";"), Token.Semicolon);
-      C.Punctuators.Insert(To_Unbounded_String (","), Token.Comma);
-      C.Punctuators.Insert(To_Unbounded_String ("."), Token.Point);
+      O.Punctuators.Insert(To_Unbounded_String ("("), Tokens.LeftBracket);
+      O.Punctuators.Insert(To_Unbounded_String (")"), Tokens.RightBracket);
+      O.Punctuators.Insert(To_Unbounded_String ("{"), Tokens.LeftBrace);
+      O.Punctuators.Insert(To_Unbounded_String ("}"), Tokens.RightBrace);
+      O.Punctuators.Insert(To_Unbounded_String ("["), Tokens.LeftSquareBracket);
+      O.Punctuators.Insert(To_Unbounded_String ("]"), Tokens.RightSquareBracket);
+      O.Punctuators.Insert(To_Unbounded_String (";"), Tokens.Semicolon);
+      O.Punctuators.Insert(To_Unbounded_String (","), Tokens.Comma);
+      O.Punctuators.Insert(To_Unbounded_String ("."), Tokens.Point);
 
       -- Operators
-      C.Operators.Insert(To_Unbounded_String ("?"), Token.Question);
-      C.Operators.Insert(To_Unbounded_String (":"), Token.Colon);
-      C.Operators.Insert(To_Unbounded_String ("~"), Token.Tilde);
-      C.Operators.Insert(To_Unbounded_String ("*"), Token.Asterisk);
-      C.Operators.Insert(To_Unbounded_String ("*="), Token.AsteriskEqual);
-      C.Operators.Insert(To_Unbounded_String ("%"), Token.Percent);
-      C.Operators.Insert(To_Unbounded_String ("%="), Token.PercentEqual);
-      C.Operators.Insert(To_Unbounded_String ("^"), Token.Carot);
-      C.Operators.Insert(To_Unbounded_String ("^="), Token.CarotEqual);
-      C.Operators.Insert(To_Unbounded_String ("/"), Token.Slash);
-      C.Operators.Insert(To_Unbounded_String ("/="), Token.SlashEqual);
-      C.Operators.Insert(To_Unbounded_String ("&"), Token.Ampersand);
-      C.Operators.Insert(To_Unbounded_String ("&&"), Token.Ampersand2);
-      C.Operators.Insert(To_Unbounded_String ("&&="), Token.AmpersandEqual);
-      C.Operators.Insert(To_Unbounded_String ("|"), Token.Pipe);
-      C.Operators.Insert(To_Unbounded_String ("||"), Token.Pipe2);
-      C.Operators.Insert(To_Unbounded_String ("|="), Token.PipeEqual);
-      C.Operators.Insert(To_Unbounded_String ("="), Token.Equal);
-      C.Operators.Insert(To_Unbounded_String ("=="), Token.Equal2);
-      C.Operators.Insert(To_Unbounded_String ("==="), Token.Equal3);
-      C.Operators.Insert(To_Unbounded_String ("!"), Token.Exclamation);
-      C.Operators.Insert(To_Unbounded_String ("!="), Token.ExclamationEqual);
-      C.Operators.Insert(To_Unbounded_String ("!=="), Token.ExclamationEqual2);
-      C.Operators.Insert(To_Unbounded_String ("+"), Token.Plus);
-      C.Operators.Insert(To_Unbounded_String ("++"), Token.Plus2);
-      C.Operators.Insert(To_Unbounded_String ("+="), Token.PlusEqual);
-      C.Operators.Insert(To_Unbounded_String ("-"), Token.Minus);
-      C.Operators.Insert(To_Unbounded_String ("--"), Token.Minus2);
-      C.Operators.Insert(To_Unbounded_String ("-="), Token.MinusEqual);
-      C.Operators.Insert(To_Unbounded_String ("<"), Token.LessThan);
-      C.Operators.Insert(To_Unbounded_String ("<<"), Token.LessThan2);
-      C.Operators.Insert(To_Unbounded_String ("<="), Token.LessThanEqual);
-      C.Operators.Insert(To_Unbounded_String ("<<="), Token.LessThan2Equal);
-      C.Operators.Insert(To_Unbounded_String (">"), Token.GreaterThan);
-      C.Operators.Insert(To_Unbounded_String (">>"), Token.GreaterThan2);
-      C.Operators.Insert(To_Unbounded_String (">="), Token.GreaterThanEqual);
-      C.Operators.Insert(To_Unbounded_String (">>="), Token.GreaterThan2Equal);
-      C.Operators.Insert(To_Unbounded_String (">>>"), Token.GreaterThan3);
-      C.Operators.Insert(To_Unbounded_String (">>>="), Token.GreaterThan3Equal);
+      O.Operators.Insert(To_Unbounded_String ("?"), Tokens.Question);
+      O.Operators.Insert(To_Unbounded_String (":"), Tokens.Colon);
+      O.Operators.Insert(To_Unbounded_String ("~"), Tokens.Tilde);
+      O.Operators.Insert(To_Unbounded_String ("*"), Tokens.Asterisk);
+      O.Operators.Insert(To_Unbounded_String ("*="), Tokens.AsteriskEqual);
+      O.Operators.Insert(To_Unbounded_String ("%"), Tokens.Percent);
+      O.Operators.Insert(To_Unbounded_String ("%="), Tokens.PercentEqual);
+      O.Operators.Insert(To_Unbounded_String ("^"), Tokens.Carot);
+      O.Operators.Insert(To_Unbounded_String ("^="), Tokens.CarotEqual);
+      O.Operators.Insert(To_Unbounded_String ("/"), Tokens.Slash);
+      O.Operators.Insert(To_Unbounded_String ("/="), Tokens.SlashEqual);
+      O.Operators.Insert(To_Unbounded_String ("&"), Tokens.Ampersand);
+      O.Operators.Insert(To_Unbounded_String ("&&"), Tokens.Ampersand2);
+      O.Operators.Insert(To_Unbounded_String ("&&="), Tokens.AmpersandEqual);
+      O.Operators.Insert(To_Unbounded_String ("|"), Tokens.Pipe);
+      O.Operators.Insert(To_Unbounded_String ("||"), Tokens.Pipe2);
+      O.Operators.Insert(To_Unbounded_String ("|="), Tokens.PipeEqual);
+      O.Operators.Insert(To_Unbounded_String ("="), Tokens.Equal);
+      O.Operators.Insert(To_Unbounded_String ("=="), Tokens.Equal2);
+      O.Operators.Insert(To_Unbounded_String ("==="), Tokens.Equal3);
+      O.Operators.Insert(To_Unbounded_String ("!"), Tokens.Exclamation);
+      O.Operators.Insert(To_Unbounded_String ("!="), Tokens.ExclamationEqual);
+      O.Operators.Insert(To_Unbounded_String ("!=="), Tokens.ExclamationEqual2);
+      O.Operators.Insert(To_Unbounded_String ("+"), Tokens.Plus);
+      O.Operators.Insert(To_Unbounded_String ("++"), Tokens.Plus2);
+      O.Operators.Insert(To_Unbounded_String ("+="), Tokens.PlusEqual);
+      O.Operators.Insert(To_Unbounded_String ("-"), Tokens.Minus);
+      O.Operators.Insert(To_Unbounded_String ("--"), Tokens.Minus2);
+      O.Operators.Insert(To_Unbounded_String ("-="), Tokens.MinusEqual);
+      O.Operators.Insert(To_Unbounded_String ("<"), Tokens.LessThan);
+      O.Operators.Insert(To_Unbounded_String ("<<"), Tokens.LessThan2);
+      O.Operators.Insert(To_Unbounded_String ("<="), Tokens.LessThanEqual);
+      O.Operators.Insert(To_Unbounded_String ("<<="), Tokens.LessThan2Equal);
+      O.Operators.Insert(To_Unbounded_String (">"), Tokens.GreaterThan);
+      O.Operators.Insert(To_Unbounded_String (">>"), Tokens.GreaterThan2);
+      O.Operators.Insert(To_Unbounded_String (">="), Tokens.GreaterThanEqual);
+      O.Operators.Insert(To_Unbounded_String (">>="), Tokens.GreaterThan2Equal);
+      O.Operators.Insert(To_Unbounded_String (">>>"), Tokens.GreaterThan3);
+      O.Operators.Insert(To_Unbounded_String (">>>="), Tokens.GreaterThan3Equal);
 
       -- reserved Keywords
-      C.Keywords.Insert(To_Unbounded_String ("break"), Token.Break);
-      C.Keywords.Insert(To_Unbounded_String ("case"), Token.Case_Tok);
-      C.Keywords.Insert(To_Unbounded_String ("catch"), Token.Catch);
-      C.Keywords.Insert(To_Unbounded_String ("continue"), Token.Continue);
-      C.Keywords.Insert(To_Unbounded_String ("debugger"), Token.Debugger);
-      C.Keywords.Insert(To_Unbounded_String ("default"), Token.Default);
-      C.Keywords.Insert(To_Unbounded_String ("delete"), Token.Delete);
-      C.Keywords.Insert(To_Unbounded_String ("do"), Token.Do_Tok);
-      C.Keywords.Insert(To_Unbounded_String ("else"), Token.Else_Tok);
-      C.Keywords.Insert(To_Unbounded_String ("finally"), Token.Finally);
-      C.Keywords.Insert(To_Unbounded_String ("for"), Token.For_Tok);
-      C.Keywords.Insert(To_Unbounded_String ("function"), Token.Function_Tok);
-      C.Keywords.Insert(To_Unbounded_String ("if"), Token.If_Tok);
-      C.Keywords.Insert(To_Unbounded_String ("in"), Token.In_Tok);
-      C.Keywords.Insert(To_Unbounded_String ("instanceof"), Token.Instanceof);
-      C.Keywords.Insert(To_Unbounded_String ("new"), Token.New_Tok);
-      C.Keywords.Insert(To_Unbounded_String ("return"), Token.Return_Tok);
-      C.Keywords.Insert(To_Unbounded_String ("switch"), Token.Switch);
-      C.Keywords.Insert(To_Unbounded_String ("this"), Token.This);
-      C.Keywords.Insert(To_Unbounded_String ("throw"), Token.Throw);
-      C.Keywords.Insert(To_Unbounded_String ("try"), Token.Try);
-      C.Keywords.Insert(To_Unbounded_String ("typeof"), Token.Typeof);
-      C.Keywords.Insert(To_Unbounded_String ("var"), Token.Var);
-      C.Keywords.Insert(To_Unbounded_String ("void"), Token.Void);
-      C.Keywords.Insert(To_Unbounded_String ("while"), Token.While_Tok);
-      C.Keywords.Insert(To_Unbounded_String ("with"), Token.With_Tok);
-      C.Keywords.Insert(To_Unbounded_String ("true"), Token.True);
-      C.Keywords.Insert(To_Unbounded_String ("false"), Token.False);
-      C.Keywords.Insert(To_Unbounded_String ("null"), Token.Null_Tok);
-
-
+      O.Keywords.Insert(To_Unbounded_String ("break"), Tokens.Break);
+      O.Keywords.Insert(To_Unbounded_String ("case"), Tokens.Case_Tok);
+      O.Keywords.Insert(To_Unbounded_String ("catch"), Tokens.Catch);
+      O.Keywords.Insert(To_Unbounded_String ("continue"), Tokens.Continue);
+      O.Keywords.Insert(To_Unbounded_String ("debugger"), Tokens.Debugger);
+      O.Keywords.Insert(To_Unbounded_String ("default"), Tokens.Default);
+      O.Keywords.Insert(To_Unbounded_String ("delete"), Tokens.Delete);
+      O.Keywords.Insert(To_Unbounded_String ("do"), Tokens.Do_Tok);
+      O.Keywords.Insert(To_Unbounded_String ("else"), Tokens.Else_Tok);
+      O.Keywords.Insert(To_Unbounded_String ("finally"), Tokens.Finally);
+      O.Keywords.Insert(To_Unbounded_String ("for"), Tokens.For_Tok);
+      O.Keywords.Insert(To_Unbounded_String ("function"), Tokens.Function_Tok);
+      O.Keywords.Insert(To_Unbounded_String ("if"), Tokens.If_Tok);
+      O.Keywords.Insert(To_Unbounded_String ("in"), Tokens.In_Tok);
+      O.Keywords.Insert(To_Unbounded_String ("instanceof"), Tokens.Instanceof);
+      O.Keywords.Insert(To_Unbounded_String ("new"), Tokens.New_Tok);
+      O.Keywords.Insert(To_Unbounded_String ("return"), Tokens.Return_Tok);
+      O.Keywords.Insert(To_Unbounded_String ("switch"), Tokens.Switch);
+      O.Keywords.Insert(To_Unbounded_String ("this"), Tokens.This);
+      O.Keywords.Insert(To_Unbounded_String ("throw"), Tokens.Throw);
+      O.Keywords.Insert(To_Unbounded_String ("try"), Tokens.Try);
+      O.Keywords.Insert(To_Unbounded_String ("typeof"), Tokens.Typeof);
+      O.Keywords.Insert(To_Unbounded_String ("var"), Tokens.Var);
+      O.Keywords.Insert(To_Unbounded_String ("void"), Tokens.Void);
+      O.Keywords.Insert(To_Unbounded_String ("while"), Tokens.While_Tok);
+      O.Keywords.Insert(To_Unbounded_String ("with"), Tokens.With_Tok);
+      O.Keywords.Insert(To_Unbounded_String ("true"), Tokens.True);
+      O.Keywords.Insert(To_Unbounded_String ("false"), Tokens.False);
+      O.Keywords.Insert(To_Unbounded_String ("null"), Tokens.Null_Tok);
    end Initialize;
 
+   procedure Clear (O : in out Object) is
+   begin
+      O.Punctuators.Clear;
+      O.Operators.Clear;
+      O.Keywords.Clear;
+   end Clear;
 
 end Punctuation;

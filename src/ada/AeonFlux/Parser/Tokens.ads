@@ -1,4 +1,4 @@
-package Token is
+package Tokens is
 
 
    type Token is (
@@ -94,4 +94,4 @@ package Token is
                   EOF
                  );
 
-end Token;
+end Tokens;
