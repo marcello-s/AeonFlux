@@ -1,3 +1,6 @@
+-- Copyright (c) 2015-2016 Marcel Schneider
+-- for details see License.txt
+
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Unbounded.Equal_Case_Insensitive;
 with Ada.Strings.Unbounded.Hash_Case_Insensitive;

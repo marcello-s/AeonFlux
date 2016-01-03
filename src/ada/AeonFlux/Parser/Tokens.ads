@@ -1,3 +1,6 @@
+-- Copyright (c) 2015-2016 Marcel Schneider
+-- for details see License.txt
+
 package Tokens is
 
 

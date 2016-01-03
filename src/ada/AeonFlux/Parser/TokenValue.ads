@@ -1,3 +1,6 @@
+-- Copyright (c) 2015-2016 Marcel Schneider
+-- for details see License.txt
+
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Position; use Position;
 with Tokens; use Tokens;

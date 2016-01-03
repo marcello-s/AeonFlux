@@ -1,3 +1,6 @@
+-- Copyright (c) 2015-2016 Marcel Schneider
+-- for details see License.txt
+
 with Ada.Text_IO;  use Ada.Text_IO;
 with Punctuation; use Punctuation;
 with Tokens; use Tokens;
