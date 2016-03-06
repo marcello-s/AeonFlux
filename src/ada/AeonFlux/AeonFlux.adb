@@ -4,6 +4,7 @@
 with Ada.Text_IO;  use Ada.Text_IO;
 with Punctuation; use Punctuation;
 with Tokens; use Tokens;
+with Lexer; use Lexer;
 
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Containers.Hashed_Maps; use Ada.Containers;
