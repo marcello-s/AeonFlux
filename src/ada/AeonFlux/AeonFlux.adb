@@ -4,6 +4,7 @@
 with Ada.Text_IO;  use Ada.Text_IO;
 with Punctuation; use Punctuation;
 with Tokens; use Tokens;
+with TokenValue; use TokenValue;
 with Lexer; use Lexer;
 
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
@@ -13,6 +14,8 @@ procedure AeonFlux is
 
    P : Punctuation.Object;
    TOK : Tokens.Token;
+   L : Lexer.Object;
+   TO : TokenValue.Object;
    
 begin
    
@@ -26,6 +29,10 @@ begin
    Put_Line (TOK'Img);
    TOK := P.Keywords.Element(To_Unbounded_String ("break"));
    Put_Line (TOK'Img);
+   
+   OpenFile (L, "Test.txt");
+   TO := ReadToken (L);
+   Put_Line (To_String (TO.Message));   
    
    Clear (P);  
    Put_Line ("");

@@ -5,12 +5,13 @@ with Tokens; use Tokens;
 with TokenValue; use TokenValue;
 with Position; use Position;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
-with Ada.Text_IO; use Ada.Text_IO;
 
 package Lexer_Base is
 
    type Object is tagged private;
 
+   procedure OpenFile (O : in out Object;
+                          File_Name : String);
    function ReadToken (O : Object) return TokenValue.Object;
 
 private
@@ -22,6 +23,8 @@ private
       Last : Token;
       NumberPunctuation : Unbounded_String := To_Unbounded_String (".-+abcdefx");
       HexNumberPunctuation : Unbounded_String := To_Unbounded_String ("abcdef");
+
+      File_Name : Unbounded_String;
    end record;
 
    function ReadWhiteSpace return TokenValue.Object;
