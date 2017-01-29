@@ -1,4 +1,4 @@
--- Copyright (c) 2015-2016 Marcel Schneider
+-- Copyright (c) 2015-2017 Marcel Schneider
 -- for details see License.txt
 
 with TokenValue; use TokenValue;

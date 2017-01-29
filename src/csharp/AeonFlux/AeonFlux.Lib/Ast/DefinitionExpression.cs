@@ -1,6 +1,6 @@
 ﻿#region license and copyright
 /*
- * The MIT License, Copyright (c) 2011-2016 Marcel Schneider
+ * The MIT License, Copyright (c) 2011-2017 Marcel Schneider
  * for details see License.txt
  */
 #endregion
