@@ -91,6 +91,25 @@ package body Punctuation is
       O.Keywords.Insert(To_Unbounded_String ("true"), Tokens.True);
       O.Keywords.Insert(To_Unbounded_String ("false"), Tokens.False);
       O.Keywords.Insert(To_Unbounded_String ("null"), Tokens.Null_Tok);
+
+      -- future reserved word
+      O.FutureReservedWords.Insert(To_Unbounded_String("class"), Tokens.Class);
+      O.FutureReservedWords.Insert(To_Unbounded_String("const"), Tokens.Const);
+      O.FutureReservedWords.Insert(To_Unbounded_String("enum"), Tokens.Enum);
+      O.FutureReservedWords.Insert(To_Unbounded_String("export"), Tokens.Export);
+      O.FutureReservedWords.Insert(To_Unbounded_String("extends"), Tokens.Extends);
+      O.FutureReservedWords.Insert(To_Unbounded_String("import"), Tokens.Import);
+      O.FutureReservedWords.Insert(To_Unbounded_String("super"), Tokens.Super);
+      O.FutureReservedWords.Insert(To_Unbounded_String("implements"), Tokens.Implements);
+      O.FutureReservedWords.Insert(To_Unbounded_String("interface"), Tokens.InterfaceType);
+      O.FutureReservedWords.Insert(To_Unbounded_String("let"), Tokens.Let);
+      O.FutureReservedWords.Insert(To_Unbounded_String("package"), Tokens.PackageType);
+      O.FutureReservedWords.Insert(To_Unbounded_String("private"), Tokens.PrivateScope);
+      O.FutureReservedWords.Insert(To_Unbounded_String("protected"), Tokens.ProtectedScope);
+      O.FutureReservedWords.Insert(To_Unbounded_String("public"), Tokens.Public);
+      O.FutureReservedWords.Insert(To_Unbounded_String("static"), Tokens.Static);
+      O.FutureReservedWords.Insert(To_Unbounded_String("yield"), Tokens.Yield);
+
    end Initialize;
 
    procedure Clear (O : in out Object) is

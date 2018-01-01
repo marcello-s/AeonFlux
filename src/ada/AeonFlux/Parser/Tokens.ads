@@ -94,7 +94,24 @@ package Tokens is
                   Identifier,
                   RegEx,
                   Illegal,
-                  EOF
+                  EOF,
+                  -- Future Reserved Words
+                  Class,
+                  Const,
+                  Enum,
+                  Export,
+                  Extends,
+                  Import,
+                  Super,
+                  Implements,
+                  InterfaceType,
+                  Let,
+                  PackageType,
+                  PrivateScope,
+                  ProtectedScope,
+                  Public,
+                  Static,
+                  Yield
                  );
 
 end Tokens;

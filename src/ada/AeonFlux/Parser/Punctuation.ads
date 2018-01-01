@@ -20,6 +20,7 @@ package Punctuation is
       Punctuators : TokenMap.Map;
       Operators : TokenMap.Map;
       Keywords : TokenMap.Map;
+      FutureReservedWords : TokenMap.Map;
    end record;
 
    procedure Initialize (O : in out Object);

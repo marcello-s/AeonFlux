@@ -3,8 +3,8 @@
 
 with Ada.Streams.Stream_IO; use Ada.Streams.Stream_IO;
 -- with Ada.Strings; use Ada.Strings;
-
 with Ada.Text_IO; use Ada.Text_IO;
+with Punctuation; use Punctuation;
 
 package body Lexer_Base is
 
@@ -81,8 +81,28 @@ package body Lexer_Base is
 
    function ReadIdentifier return TokenValue.Object is
       O : TokenValue.Object;
+      C : Character;
+      P : Punctuation.Object;
    begin
-      return O;
+
+      while True loop
+         C := Peek;
+         if IsName(C) OR IsDigit(C) then
+            C := Advance;
+         else
+            if P.FutureReservedWords.Contains(To_Unbounded_String("")) then
+               return O;
+            end if;
+
+            if P.Keywords.Contains(To_Unbounded_String("")) then
+               return O;
+            end if;
+
+            return O;
+         end if;
+      end loop;
+
+      -- return O;
    end ReadIdentifier;
 
 
